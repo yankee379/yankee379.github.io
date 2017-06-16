@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!Digital Culture Summer Institue Daily Log>
+<html>
+
+  <head>
+    <link rel="stylesheet" type= "text/css" href="HomePage.css"/>
+    <meta charset="utf-8">
+
+    <title>Digital Culture Summer Institute</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbfSBInJ4BG9Q9iqeQKuBX5sKsYt-qMsU"></script>
+    <style>
+     #mapcanvas{
+      height: 500px;
+      background-color: #aaaaaa;
+    }
+    </style>
+
+  </head>
+
+  <body>
+<div id="mapcanvas"></div>
+    <h1>Digital Culture Summer Institue</h1>
+    <h2>Joshua Weisman</h2>
+    <h3>Monday June 12th, 2017</h3>
+      <h3>What did I do this summer?</h3>
+      <p>What I have done this summer, is I have gone to an "All American"
+      wrestling camp at Chandler High School</p>
+      <a href="http://chandlerwrestling.com/index.html">Chandler Wrestling</a>
+      <img src="http://cdn3.sportngin.com/attachments/news_article/2771/6605/564151_491645780845697_1489814607_n_large.jpg" alt="arizona-wrestling">
+    <h3>What am I excited to learn?</h3>
+    <p>I am excited to learn as much as possible in this camp.
+    Not to mention the different camps I get to go to before school starts</p>
+<a href="http://troop379.com">BSA Troop 379</a>
+<img src="http://2.bp.blogspot.com/-2vkJqSfMKzE/TmGzkFQmLMI/AAAAAAAADwY/N91UVV0ZInU/s1600/DSC05146.JPG" alt="Camp-Parsons" alt="">
+
+<a href="6-13-17.html">Day 2</a>
+
+  </body>
+
+<script>
+  var map;
+  var geocoder = new google.maps.Geocoder();
+  var address = "350 N Arizona Ave, Chandler, AZ 85224";
+    var geocodeOptions = {
+      address: address
+    }
+    geocoder.geocode( geocodeOptions, addressCallback );
+
+    function addressCallback( results, status ) {
+      if (status == google.maps.GeocoderStatus.OK){
+        var location = results[0].geometry.location;
+
+        var mapDiv = document.getElementById("mapcanvas");
+        var mapOptions = {
+          zoom: 15,
+          center: location,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map( mapDiv, mapOptions );
+
+        }
+      }
+</script>
+</html>
